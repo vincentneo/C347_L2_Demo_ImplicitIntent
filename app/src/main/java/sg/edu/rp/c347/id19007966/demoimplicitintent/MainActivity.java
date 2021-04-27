@@ -3,6 +3,7 @@ package sg.edu.rp.c347.id19007966.demoimplicitintent;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.Editable;
 import android.view.View;
@@ -11,7 +12,7 @@ import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button buttonEmail;
+    Button buttonEmail, buttonRP;
     EditText editTextMessage;
 
     @Override
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         buttonEmail = findViewById(R.id.buttonEmail);
+        buttonRP = findViewById(R.id.buttonRP);
         editTextMessage = findViewById(R.id.editTextMessage);
 
         buttonEmail.setOnClickListener(new View.OnClickListener() {
@@ -40,5 +42,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(Intent.createChooser(emailIntent, "Choose an email client: "));
             }
         });
+
+        buttonRP.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent rpIntent = new Intent(Intent.ACTION_VIEW);
+                rpIntent.setData(Uri.parse("https://www.rp.edu.sg"));
+                startActivity(rpIntent);
+            }
+        });
+
     }
 }

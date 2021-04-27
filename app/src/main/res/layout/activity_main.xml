@@ -21,4 +21,10 @@
         android:layout_height="wrap_content"
         android:text="Send Email" />
 
+    <Button
+        android:id="@+id/buttonRP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Visit RP" />
+
 </LinearLayout>
